@@ -3,11 +3,11 @@ package com.lhb.java;
 import com.lhb.inf.BagSolveInf;
 
 /**
- * Created by Administrator on 14-8-12.
+ * Created by Administrator on 14-8-13.
  */
-public class GreedyBag implements BagSolveInf {
+public class ValueGreedyBag implements BagSolveInf {
     @Override
-    public int[] solve(double[] wight, double[] value,double maxWight) {
+    public int[] solve(double[] wight, double[] value, double maxWight) {
         int size = wight.length;
         int[] sortIndex = new int[size];
 
@@ -16,7 +16,7 @@ public class GreedyBag implements BagSolveInf {
 
         for(int i = 0; i < size; i++) {
             for(int j = i+1; j < size; j++) {
-                if(wight[sortIndex[j]] > wight[sortIndex[i]]) {
+                if(value[sortIndex[j]] > value[sortIndex[i]]) {
                     int tmp = sortIndex[i] ;
                     sortIndex[i] = sortIndex[j];
                     sortIndex[j] = tmp;
